@@ -1,0 +1,17 @@
+﻿@page "/register"
+@using ApplicationManager.Frontend.Models
+@inject HttpClient Httpclient
+
+<InputText @bind-Value="user.Username" placeholder="Username"></InputText>
+<InputText @bind-Value="user.HashedPassword" placeholder="Password"></InputText>
+<button class="btn btn-primary" @onclick="CreateUser">Register!</button>
+@code {
+    private UserDto user = new UserDto();
+
+    public async Task CreateUser()
+    {
+        using var response = await Httpclient.PostAsJsonAsync("https://localhost:7270/api/Users", user);
+    }
+
+    
+}

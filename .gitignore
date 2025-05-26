@@ -1,4 +1,9 @@
+bin/
+obj/
 .vs/
+wwwroot/_framework/
+wwwroot/css/app.bundle.scp.css
+wwwroot/css/app.bundle.scp.css.map
 *.user
 *.suo
 *.vsidx
